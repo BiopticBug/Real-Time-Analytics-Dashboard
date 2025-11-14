@@ -1,29 +1,21 @@
 {
-  "name": "fullstack",
-  "version": "1.0.0",
-  "description": "- Node 18+\r - Docker (for MongoDB)",
-  "main": "index.js",
+  "name": "realtime-analytics-client",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm --prefix server run dev",
-    "dev:server": "npm --prefix server run dev",
-    "dev:client": "npm --prefix client run dev",
-    "start": "npm --prefix server start"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5173"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "express-rate-limit": "^8.2.1",
-    "helmet": "^8.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.19.3",
-    "morgan": "^1.10.1",
-    "socket.io": "^4.8.1",
-    "ws": "^8.18.3"
+    "chart.js": "^4.4.4",
+    "chartjs-plugin-zoom": "^2.2.0",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8"
   }
 }

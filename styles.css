@@ -1,0 +1,239 @@
+:root {
+  /* Theme colors */
+  --bg: #eaf6ff;
+  --panel: #ffffff;
+  --muted: #64748b;
+  --text: #0f172a;
+  --prime: #0ea5e9;
+  --ok: #10b981;
+  --warn: #f59e0b;
+  --err: #ef4444;
+  --accent: #38bdf8;
+  --shadow: rgba(14, 165, 233, 0.12);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #e0f3ff, #b8e2ff);
+  font-family: "Poppins", "Inter", sans-serif;
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* Layout wrapper */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Brand Title */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.brand .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+}
+
+.brand span {
+  background: linear-gradient(90deg, #0ea5e9, #0284c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Controls on the right */
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.select,
+.btn {
+  background: var(--panel);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.select:hover,
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--prime), #0284c7);
+  border: none;
+  color: white;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* MAIN GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1.3fr;
+  gap: 18px;
+  flex: 1;
+  padding: 20px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  background: var(--bg);
+}
+
+/* PANELS */
+.panel {
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 4px 16px rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.12);
+}
+
+.panel h4 {
+  color: var(--prime);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* STATS SECTION */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.stat {
+  background: var(--panel);
+  border-radius: 12px;
+  text-align: center;
+  padding: 14px 10px;
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.08);
+  transition: 0.2s ease;
+}
+
+.stat:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 14px rgba(14, 165, 233, 0.12);
+}
+
+.stat .label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stat .value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  margin-top: 4px;
+}
+
+/* LIST AREA */
+.list {
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.status .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.ok {
+  background: var(--ok);
+}
+.dot.err {
+  background: var(--err);
+}
+.dot.warn {
+  background: var(--warn);
+}
+
+/* CHART GRID */
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 12px;
+  background: rgba(236, 247, 255, 0.9);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 13px;
+  color: var(--muted);
+  backdrop-filter: blur(10px);
+}
